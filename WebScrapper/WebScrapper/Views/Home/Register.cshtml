@@ -1,0 +1,64 @@
+﻿@model WebScrapper.Models.UserModel
+@{
+    ViewData["Title"] = "Create User Page";
+}
+<style>
+    .table-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    table, input {
+        width: auto;
+        margin: auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @using (Html.BeginForm())
+    {
+        <div class="table-center">
+            <table>
+                <tr>
+                    <td>
+                        @Html.Label("User Name")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.UserName)
+                        @Html.ValidationMessageFor(x => x.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Email")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => x.Email)
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("Password")
+                    </td>
+                    <td>
+                        @Html.PasswordFor(x => x.PasswordHash)
+                        @Html.ValidationMessageFor(x => x.PasswordHash)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <input type="submit" value="Login" />
+    }
+</div>

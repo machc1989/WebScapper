@@ -1,0 +1,26 @@
+﻿@model List<WebScrapper.Models.ScrappedPageModel>
+@{
+    ViewData["Title"] = "Scrapped Pages";
+}
+
+@* @using (Html.BeginForm("ScrappePage","Page",FormMethod.Post))
+{
+    
+} *@
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Total Links</td>
+        </tr>
+    </thead>
+@foreach (var scrappedPage in Model)
+{
+        <tr>
+            <td>@scrappedPage.Name</td>
+            <td>@scrappedPage.isProcessed ? scrappedPage.TotalLinks : Processing}</td>
+        </tr>
+}
+    
+</table>
