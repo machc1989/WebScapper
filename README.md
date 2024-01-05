@@ -2,7 +2,7 @@
 
 Components used for the project
 Authentication: JWT
-API: Web API
+API: Web API and Swagger
 Database: In-memory
 ERP: Entity Framework
 Framework: .Net 7
